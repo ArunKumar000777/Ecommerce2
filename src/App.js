@@ -1,13 +1,28 @@
 import "./App.css";
-import CategoryList from "./components/CategoryList";
-import { Routes, Route } from "react-router-dom";
-import ShopComponent from "./routes/shop/ShopComponent";
+import { Routes, Route} from "react-router-dom";
+import HomeComponent from "./routes/home/HomeComponent";
+import NavigationComponent from "./routes/navigation/NavigationComponent";
+import SignIn from "./routes/sign-in/SignIn";
+function Shop() {
+    return (
+        <div>
+            <h1>arun</h1>
+        </div>
+    );
+}
+
+
 
 function App() {
     return (
-        <div className="App">
-            <CategoryList />
-            <ShopComponent/>
+        <div>
+            <Routes>
+                <Route path="/" element={<NavigationComponent />}>
+                    <Route index element={<HomeComponent />} />
+                    <Route path="shop" element={<Shop />} />
+                    <Route path="sign-in" element={<SignIn />} />
+                </Route>
+            </Routes>
         </div>
     );
 }
