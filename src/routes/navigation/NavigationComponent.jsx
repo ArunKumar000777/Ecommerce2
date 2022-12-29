@@ -39,8 +39,8 @@ const NavigationComponent = () => {
                     )}
                     <CartIcon />
                 </div>
-                {isCartOpen ? <CartDropDown /> : null}
             </div>
+                {isCartOpen ? <CartDropDown /> : null}
             <Outlet />
         </>
     );

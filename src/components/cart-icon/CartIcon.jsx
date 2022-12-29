@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
-import {ReactComponent as ShoppingIcon} from '../../assets/shopping-bag.svg'
-import { CartContext } from '../../contexts/CartContexts';
+import React, { useContext } from "react";
+import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
+import { CartContext } from "../../contexts/CartContexts";
 const CartIcon = () => {
-    const {setIsCartOpen,isCartOpen} = useContext(CartContext);
-  return (
-    <div className='relative flex items-center justify-center w-11 h-11'>
-        <ShoppingIcon className='h-8 w-7'/>
-        <span onClick={()=>setIsCartOpen(!isCartOpen)} className='absolute font-medium cursor-pointer top-4'>0</span>
-    </div>
-  )
-}
+    const { setIsCartOpen, isCartOpen,cartCount } = useContext(CartContext);
+    return (
+        <div className="relative flex items-center justify-center w-11 h-11">
+            <ShoppingIcon onClick={() => setIsCartOpen(!isCartOpen)} className="h-8 cursor-pointer w-7" />
+            <span className="absolute font-medium top-4">{cartCount}</span>
+        </div>
+    );
+};
 
-export default CartIcon
+export default CartIcon;
